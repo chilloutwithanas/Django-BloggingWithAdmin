@@ -11,6 +11,7 @@ This service has two prominant parts:
 <p align="center">
   <img src="blog/assets/WebPageFlow.gif" align="center">
 </p>
+
 1. Here we have the HomePage using the custom manager to show all the posts.
 
 2. The user can read each post in detail after clicking on it.
