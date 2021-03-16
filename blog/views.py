@@ -4,7 +4,7 @@ from .models import Post
 
 def post_list(request):
     '''To (render) list all the published posts'''
-    posts = Post.published.all()
+    posts = Post.objects_published.all()
     return render(request,
                   'blog/post/list.html',
                   {'posts':posts})
@@ -12,7 +12,7 @@ def post_list(request):
 def post_detail(request, year, month, day, post):
     '''To display a single post'''
     post = get_object_or_404(Post,  slug=post,
-                                    status='published',
+                                    satus='published',
                                     publish__year=year,
                                     publish__month=month,
                                     publish__day=day)

@@ -1,0 +1,49 @@
+<!-- This is the base template using the template tags -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link href="{% static "css\blog.css" %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div id="sidebar">
+            <h2>A Sample End to End Blogging Application by Anas Khan </h2>
+            <p>The following Django 3 features were learned while developing this practice project:</p>
+            <ul>
+                <li>Phase-1</li>
+                <ul>
+                    <li>Creating a Django application</li>
+                    <li>Designing the blog data schema (models.py)</li>
+                    <li>Activating and applying migrations of the Model</li>
+                    <li>Creating template for my Views </li>
+                </ul>
+                <li>Phase-2</li>
+                <ul>
+                    <li>Creating a custom adminsitration site</li>
+                    <li>Creating a superuser</li>
+                </ul>
+                <li>Phase-3</li>
+                <ul>
+                    <li>Retreiving information using Query Sets via Django ORM (Object-Relational Mapper)</li>
+                    <li>Creating a custom model manager</li>
+                </ul>
+                <li>Phase-4</li>
+                <ul>
+                    <li>Building list and details views</li>
+                    <li>Adding URL patters to the views</li>
+                </ul>
+                <li>Phase-5</li>
+                <ul>
+                    <li>Creating templates for my views by using Template Tags, Variables and Filters</li>
+                    <li>Adding Pagination</li>
+                </ul>
+            </ul>
+        </div>
+    </body>
+</html>

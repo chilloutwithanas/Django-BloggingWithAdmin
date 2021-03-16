@@ -6,6 +6,7 @@ from .models import Post
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+    '''This is the Custom Administration Site'''
     list_display = ('title', 'slug', 'author', 'publish', 'satus')
     list_filter = ('satus', 'created', 'publish', 'author')
     search_fields = ('title', 'body')

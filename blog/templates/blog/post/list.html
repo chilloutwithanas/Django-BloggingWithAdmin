@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block title %}AnasKhan-Blog{% endblock %}
+
+{% block content %}
+    <h1>Welcome To AnasKhan's Blog</h1>
+        {% for post in posts %}
+            <h2>
+                <!-- Using the Template Variables -->
+                <a href="{{ post.get_absolute_url }}">
+                    {{post.title}}
+                </a>
+            </h2>
+            <p class="date">
+                <!-- Using the Template Variables -->
+                Published {{ post.publish }} by {{ post.author }}
+            </p>
+            <!-- Using the Template Filters -->
+            {{post.body | truncatewords:30 | linebreaks }}
+        {% endfor %}
+{% endblock %}

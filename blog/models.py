@@ -9,7 +9,9 @@ class PublishedManager(models.Manager):
     '''customized manager to retrieve all posts with the published status'''
     def get_queryset(self):
         '''The get function of the customized manager'''
-        return super().get_queryset().filter(status='published')
+        return super().get_queryset().filter(satus='published')
+
+
 
 class Post (models.Model):
     '''This is Blog's Post Data Schema'''
@@ -36,6 +38,13 @@ class Post (models.Model):
                              choices=STATUS_CHOICES,
                              default='draft')
 
+    objects = models.Manager() # The default manager.
+    
+    # this published custom manager was conflicting with 
+    # the published variable defined above. Thus, I changed 
+    # it to objects_published
+    objects_published = PublishedManager() #my custom manager
+    
     class Meta:
         '''Add the metadata'''
         ordering = ('-publish',)
