@@ -119,3 +119,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# Using mailspons.com for fake SMTP
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.mailspons.com'
+EMAIL_HOST_USER = 'f14365fbd2994a3f8110'
+EMAIL_HOST_PASSWORD = '5eef5cc29a874bce8353c956bb9c4600'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
