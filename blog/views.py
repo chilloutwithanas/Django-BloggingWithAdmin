@@ -58,10 +58,10 @@ def post_share(request, post_id):
             message = f"Read {post.title} at {post_url}\n\n" \
                         f"{cd['name']}\'s comments: {cd['comments']}"
             send_mail(subject, message, 'f14365fbd2994a3f8110@mailspons.com', cd['to'])
-            send = True
+            sent = True
             
     else:
         form = EmailPostForm()
     return render(request, 'blog/post/share.html', 
-                  {'post':post, 'form':form})
+                  {'post':post, 'form':, 'sent':sent})
 
